@@ -3,7 +3,9 @@ import * as api from "../Api";
 import { Link } from "@reach/router";
 
 class StudentsByBlock extends React.Component {
-  state = {};
+  state = {
+    students: [],
+  };
 
   componentDidMount() {
     api.fetchStudentsByBlock(this.props.block).then(({ students }) => {
@@ -22,7 +24,7 @@ class StudentsByBlock extends React.Component {
           {this.state.students.map((student) => {
             return (
               <li key={student._id}>
-                Graduate Name: {student.name} <br />
+                Student Name: {student.name} <br />
               </li>
             );
           })}
