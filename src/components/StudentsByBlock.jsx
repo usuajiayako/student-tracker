@@ -2,12 +2,11 @@ import React from "react";
 import * as api from "../Api";
 import { Link } from "@reach/router";
 
-class Grads extends React.Component {
-  state = {
-    students: [],
-  };
+class StudentsByBlock extends React.Component {
+  state = {};
+
   componentDidMount() {
-    api.fetchGraduates().then(({ students }) => {
+    api.fetchStudentsByBlock(this.props.block).then(({ students }) => {
       this.setState({ students });
     });
   }
@@ -17,7 +16,7 @@ class Grads extends React.Component {
         <Link to="/">
           <button>Home</button>
         </Link>
-        <h2> Graduates </h2>
+        <h2> Students in the {this.props.block} block</h2>
 
         <ul className="studentList">
           {this.state.students.map((student) => {
@@ -33,4 +32,4 @@ class Grads extends React.Component {
   }
 }
 
-export default Grads;
+export default StudentsByBlock;
