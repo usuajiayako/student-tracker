@@ -25,7 +25,9 @@ class Grads extends React.Component {
           {this.state.students.map((student) => {
             return (
               <li key={student._id}>
-                Graduate Name: {student.name} <br />
+                Graduate Name: {student.name} 
+                <br />
+                <br />
               </li>
             );
           })}

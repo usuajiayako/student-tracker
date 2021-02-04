@@ -34,9 +34,12 @@ class Students extends React.Component {
           {this.state.students.map((student) => {
             return (
               <li className="studentCard" key={student._id}>
-                Student Name: {student.name} <br />
+                Student Name: {student.name} 
+                <br />
                 Current Block:
                 {student.currentBlock}
+                <br />
+                <br />
               </li>
             );
           })}

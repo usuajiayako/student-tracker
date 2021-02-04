@@ -1,18 +1,17 @@
 import React from "react";
+import * as api from "../Api";
 
 class Addstudent extends React.Component {
   state = { 
-    newStudent : {
-      "_id": "",
       "name": "",
-      "startingCohort": 0,
-      "currentBlock": ""
-    }
+      "startingCohort": "",
    }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-    
+    api.addStudent({...this.state})
+    this.setState({ "name": "",
+    "startingCohort": "",})
   }
 
   handleInput = ({target: {value, id}}) => {
@@ -24,19 +23,13 @@ class Addstudent extends React.Component {
   render() { 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>Student ID:
-        <input type="text" onChange={this.handleInput} id="_id"/>
-        </label>
         <label>Name:
-        <input type="text" onChange={this.handleInput} id="name"/>
+        <input type="text" onChange={this.handleInput} id="name" value={this.state.name}/>
         </label>
         <label>Starting Cohort:
-        <input type="text" onChange={this.handleInput} id="startingCohort"/>
+        <input type="text" onChange={this.handleInput} id="startingCohort" value={this.state.startingCohort}/>
         </label>
-        <label>Current Block:
-        <input type="text" onChange={this.handleInput} id="currentBlock"/>
-        </label>
-        <button type="submit" onClick={this.handleSubmit}>Comfirm student detail</button>
+        <button type="submit" onClick={this.handleSubmit}>Add a new student</button>
       </form>
       );
   }

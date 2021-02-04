@@ -49,3 +49,8 @@ nav {
 .dropdown:hover .dropbtn {
   background-color: #674ab6;
 }
+
+ul {
+  column-count: 4;
+  list-style-type: none;
+}
