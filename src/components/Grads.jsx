@@ -14,9 +14,11 @@ class Grads extends React.Component {
   render() {
     return (
       <main>
+        <nav className="nav-bar"></nav>
         <Link to="/">
-          <button>Home</button>
+          <p>Current Students</p>
         </Link>
+
         <h2> Graduates </h2>
 
         <ul className="studentList">
