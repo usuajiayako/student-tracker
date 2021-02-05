@@ -30,7 +30,6 @@ Router {
 }
 .navBar {
   background-color: #431fa7;
-
   display: flex;
   grid-area: side;
   border: solid 2px orange;
@@ -41,12 +40,20 @@ Router {
   color: white;
   font-size: 16px;
 }
-/* nav {
+
+.header {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-} */
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+}
+
+.guraduates {
+  text-align: center;
+}
+
 .dropbtn {
   background-color: #431fa7;
   color: white;
@@ -84,4 +91,14 @@ Router {
 ul {
   column-count: 4;
   list-style-type: none;
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.blockStudent {
+  text-align: center;
 }

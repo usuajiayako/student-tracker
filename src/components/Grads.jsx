@@ -17,7 +17,7 @@ class Grads extends React.Component {
       <main>
         <NavBar />
 
-        <h2> Graduates </h2>
+        <h2 class="guraduates"> Graduates </h2>
         <p>Total graduates: {this.state.students.length}</p>
         <ul className="studentList">
           {this.state.students.map((student) => {

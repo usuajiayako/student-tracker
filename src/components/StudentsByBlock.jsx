@@ -18,7 +18,7 @@ class StudentsByBlock extends React.Component {
         <NavBar />
         <p>Total students in this block: {this.state.students.length}</p>
 
-        <h2> Students in the {this.props.block} block</h2>
+        <h2 className="blockStudent"> Students in the {this.props.block} block</h2>
 
         <ul className="studentList">
           {this.state.students.map((student) => {

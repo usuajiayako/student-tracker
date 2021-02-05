@@ -4,7 +4,7 @@ import { Router } from "@reach/router";
 import Students from "./components/Students";
 import Grads from "./components/Grads";
 import StudentsByBlock from "./components/StudentsByBlock";
-import AddStudent from "./components/AddStudent";
+import AddStudent from "./components/Addstudent";
 import DeleteStudent from "./components/DeleteStudent";
 
 function App() {

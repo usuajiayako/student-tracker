@@ -22,7 +22,7 @@ class DeleteStudent extends React.Component {
     return (
       <>
         <NavBar />
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form">
           <label>
             Id of student you wish to delete:
             <input
