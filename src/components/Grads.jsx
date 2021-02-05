@@ -1,6 +1,7 @@
 import React from "react";
 import * as api from "../Api";
-import { Link } from "@reach/router";
+
+import NavBar from "./NavBar";
 
 class Grads extends React.Component {
   state = {
@@ -14,18 +15,15 @@ class Grads extends React.Component {
   render() {
     return (
       <main>
-        <nav className="nav-bar"></nav>
-        <Link to="/">
-          <p>Current Students</p>
-        </Link>
+        <NavBar />
 
         <h2> Graduates </h2>
-
+        <p>Total graduates: {this.state.students.length}</p>
         <ul className="studentList">
           {this.state.students.map((student) => {
             return (
               <li key={student._id}>
-                Graduate Name: {student.name} 
+                Graduate Name: {student.name}
                 <br />
                 <br />
               </li>

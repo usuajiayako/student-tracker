@@ -23,31 +23,19 @@ export const addStudent = (data) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  }).then((response) => response.json());
 };
 
 export const deleteStudent = ({ id }) => {
-  return (
-    fetch(`https://nc-student-tracker.herokuapp.com/api/students/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // body: JSON.stringify(id),
-    })
-      // .then((response) => response.json())
-      // .then((data) => {
-      //   console.log("Success:", data);
-      // })
-      .catch((error) => {
-        console.error("Error:", error);
-      })
-  );
+  return fetch(`https://nc-student-tracker.herokuapp.com/api/students/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // body: JSON.stringify(id),
+  });
+  // .then((response) => response.json())
+  // .then((data) => {
+  //   console.log("Success:", data);
+  // })
 };

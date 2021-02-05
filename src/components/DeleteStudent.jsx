@@ -1,8 +1,9 @@
 import React from "react";
 import * as api from "../Api";
+import NavBar from "./NavBar";
 
 class DeleteStudent extends React.Component {
-  state = { id: "" };
+  state = { id: "", msg: "" };
 
   handleInput = (event) => {
     this.setState({ id: event.target.value });
@@ -11,27 +12,32 @@ class DeleteStudent extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     api.deleteStudent({ ...this.state }).then((res) => {
-      console.log(res);
+      res.status === 204
+        ? this.setState({ id: "", msg: "Great job" })
+        : this.setState({ id: "", msg: "Student Id does not exist" });
     });
-    this.setState({ id: "" });
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Id of student you wish to delete:
-          <input
-            type="text"
-            onChange={this.handleInput}
-            id="id"
-            value={this.state.id}
-          />
-        </label>
-        <button type="submit" onClick={this.handleSubmit}>
-          Delete student
-        </button>
-      </form>
+      <>
+        <NavBar />
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Id of student you wish to delete:
+            <input
+              type="text"
+              onChange={this.handleInput}
+              id="id"
+              value={this.state.id}
+            />
+          </label>
+          <button type="submit" onClick={this.handleSubmit}>
+            Delete student
+          </button>
+        </form>
+        <p> {this.state.msg}</p>
+      </>
     );
   }
 }

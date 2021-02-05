@@ -1,6 +1,6 @@
 import React from "react";
 import * as api from "../Api";
-import { Link } from "@reach/router";
+import NavBar from "./NavBar";
 
 class StudentsByBlock extends React.Component {
   state = {
@@ -15,10 +15,9 @@ class StudentsByBlock extends React.Component {
   render() {
     return (
       <main>
+        <NavBar />
         <p>Total students in this block: {this.state.students.length}</p>
-        <Link to="/">
-          <button>Home</button>
-        </Link>
+
         <h2> Students in the {this.props.block} block</h2>
 
         <ul className="studentList">

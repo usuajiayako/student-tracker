@@ -1,14 +1,52 @@
-.App {
+App {
+  font-family: "Amatic SC", cursive;
+  background-color: brown;
   text-align: center;
   height: 100vh;
+  display: grid;
+  border: solid 2px black;
 }
-nav {
+
+Router {
+  font-family: "Amatic SC", cursive;
+  background-color: rgb(219, 124, 140);
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    “side main”
+    “side main”;
+  border: solid 2px pink;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+}
+.students {
+  background-color: rgb(248, 248, 164);
+  grid-area: main;
+  border: solid 2px blue;
+}
+.navBar {
+  background-color: #431fa7;
+
+  display: flex;
+  grid-area: side;
+  border: solid 2px orange;
+  justify-content: space-around;
+}
+
+.navBar p {
+  color: white;
+  font-size: 16px;
+}
+/* nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-}
-
+} */
 .dropbtn {
   background-color: #431fa7;
   color: white;
@@ -16,12 +54,10 @@ nav {
   font-size: 16px;
   border: none;
 }
-
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -30,26 +66,21 @@ nav {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-content a:hover {
   background-color: #ddd;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown:hover .dropbtn {
   background-color: #674ab6;
 }
-
 ul {
   column-count: 4;
   list-style-type: none;

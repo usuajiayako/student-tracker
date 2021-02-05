@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
+      <Router className="Router">
         <Students path="/" />
         <Students path="/students" />
         <Grads path="/students/graduates" />
