@@ -4,7 +4,8 @@ import { Router } from "@reach/router";
 import Students from "./components/Students";
 import Grads from "./components/Grads";
 import StudentsByBlock from "./components/StudentsByBlock";
-import Addstudent from "./components/Addstudent";
+import AddStudent from "./components/AddStudent";
+import DeleteStudent from "./components/DeleteStudent";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Students path="/students" />
         <Grads path="/students/graduates" />
         <StudentsByBlock path="/students/:block" />
-        <Addstudent path="/students/addstudent" />
+        <AddStudent path="/students/addstudent" />
+        <DeleteStudent path="/students/deletestudent" />
       </Router>
     </div>
   );

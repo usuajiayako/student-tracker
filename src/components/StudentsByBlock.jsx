@@ -15,6 +15,7 @@ class StudentsByBlock extends React.Component {
   render() {
     return (
       <main>
+        <p>Total students in this block: {this.state.students.length}</p>
         <Link to="/">
           <button>Home</button>
         </Link>

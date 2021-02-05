@@ -15,26 +15,28 @@ class Students extends React.Component {
   render() {
     return (
       <main>
-        <nav class="navBar">
+        <nav className="navBar">
+          <Link to="/students/addstudent">Add a new student</Link>
           <Link to="/students/graduates">
             <p>Graduates</p>
           </Link>
-          <div class="dropdown">
-            <button class="dropbtn">See students by block</button>
-            <div class="dropdown-content">
+          <div className="dropdown">
+            <button className="dropbtn">See students by block</button>
+            <div className="dropdown-content">
               <Link to="/students/proj">Project</Link>
-              <Link to="/students/fun">Fundamental</Link>
+              <Link to="/students/fun">Fundamentals</Link>
               <Link to="/students/fe">Frontend</Link>
               <Link to="/students/be">Backend</Link>
             </div>
           </div>
         </nav>
-        <h2 class="header"> Current Students </h2>
+        <h2 className="header"> Current Students </h2>
+        <p>Total students: {this.state.students.length}</p>
         <ul className="studentList">
           {this.state.students.map((student) => {
             return (
               <li className="studentCard" key={student._id}>
-                Student Name: {student.name} 
+                Student Name: {student.name}
                 <br />
                 Current Block:
                 {student.currentBlock}
