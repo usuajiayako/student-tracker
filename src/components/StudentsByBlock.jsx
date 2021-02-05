@@ -13,7 +13,6 @@ class StudentsByBlock extends React.Component {
 
   componentDidUpdate = (prevProps) => {
     if (this.props.block !== prevProps.block) {
-      console.log(this.props.state)
       this.getStudentsByBlock();
     }
   }

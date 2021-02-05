@@ -88,9 +88,19 @@ p {
 .dropdown:hover .dropbtn {
   background-color: #674ab6;
 }
+
+
 ul {
-  column-count: 4;
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  border: solid 2px blue;
+  margin: 5px;
+  width: 30%;
 }
 
 .form {
