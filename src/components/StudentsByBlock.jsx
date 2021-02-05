@@ -7,19 +7,30 @@ class StudentsByBlock extends React.Component {
     students: [],
   };
 
-  componentDidMount() {
-    api.fetchStudentsByBlock(this.props.block).then(({ students }) => {
+  componentDidMount = () => {
+    this.getStudentsByBlock();
+  }
+
+  componentDidUpdate = (prevProps) => {
+    if (this.props.block !== prevProps.block) {
+      console.log(this.props.state)
+      this.getStudentsByBlock();
+    }
+  }
+
+  getStudentsByBlock = () => {
+    api.fetchStudentsByBlock(this.props.block)
+    .then(({ students }) => {
       this.setState({ students });
     });
   }
+
   render() {
     return (
       <main>
         <NavBar />
         <p>Total students in this block: {this.state.students.length}</p>
-
         <h2 className="blockStudent"> Students in the {this.props.block} block</h2>
-
         <ul className="studentList">
           {this.state.students.map((student) => {
             return (

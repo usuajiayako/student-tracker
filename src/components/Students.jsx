@@ -5,16 +5,18 @@ import NavBar from "../components/NavBar";
 class Students extends React.Component {
   state = {
     students: [],
+    isLoading: true,
   };
 
   componentDidMount() {
     api.fetchStudents().then(({ students }) => {
-      this.setState({ students });
+      this.setState({ students, isLoading: false });
     });
   }
   render() {
-    return (
-      <main>
+    return this.state.isLoading ? (
+      <p>Loading...</p>
+      ): ( <main>
         <NavBar />
         <h2 className="header"> Current Students </h2>
         <p>Total students: {this.state.students.length}</p>
@@ -33,7 +35,7 @@ class Students extends React.Component {
           })}
         </ul>
       </main>
-    );
+      )
   }
 }
 

@@ -6,17 +6,18 @@ import NavBar from "./NavBar";
 class Grads extends React.Component {
   state = {
     students: [],
+    isLoading: true,
   };
   componentDidMount() {
     api.fetchGraduates().then(({ students }) => {
-      this.setState({ students });
+      this.setState({ students, isLoading: false });
     });
   }
   render() {
-    return (
-      <main>
+    return this.state.isLoading ? (
+      <p>Loading...</p>
+      ): ( <main>
         <NavBar />
-
         <h2 class="guraduates"> Graduates </h2>
         <p>Total graduates: {this.state.students.length}</p>
         <ul className="studentList">
